@@ -1,0 +1,155 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    color: white;
+}
+
+video {
+    width: 100%;
+}
+
+.video-wrapper {
+    width: 50%;
+    /* max-width: 700px; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.video-wrapper:hover .controls {
+    transform: translateY(0%);
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 24px;
+    padding: 14px;
+    /* width: 300px; */
+    /* width: 100%; */
+    /* max-width: 500px; */
+    flex-wrap: wrap;
+    background: rgba(252, 252, 252, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transform: translateY(150%);
+    transition: all 0.3s ease-in-out;
+}
+
+.progress{
+    width: 100%;
+}
+
+.actions{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+}
+
+.actions button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.actions button i {
+    background-color: transparent;
+    color: white;
+    font-size: 30px;
+}
+
+input[type="range"] {
+    /* appearance: none !important; */
+
+    background: red;
+    border-radius: 20px;
+    height: 4px;
+    width: 350px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+
+    color: white;
+    cursor: pointer;
+    height: 6px;
+}
+
+
+
+
+.velocity {
+    appearance: none;
+    background: none;
+    color: white;
+    outline: none;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+}
+.volume{
+    width: 50px !important;
+    background-color: blue;
+}
+
+.volume-container{
+    /* width: 1px; */
+    display: flex;
+    /* row-gap: 4; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mute-btn {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.mute-btn i {
+    background-color: none;
+    color: white;
+    font-size: 20px;
+}
+
+option {
+    color: black;
+}
+
+
+/* Add styles for minimized state */
+.video-wrapper.minimized {
+    width: 300px; /* Fixed width */
+    height: 169px; /* Height to maintain 16:9 aspect ratio */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border-radius: 10px; /* Adjust border-radius as needed */
+}
+
+/* Hide controls when minimized */
+.video-wrapper.minimized .controls {
+    display: none;
+}
+
+/* Adjust styles for the controls */
+.video-wrapper.minimized:hover .controls {
+    display: flex;
+    transform: translateY(0%);
+}
